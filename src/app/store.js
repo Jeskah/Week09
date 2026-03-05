@@ -1,5 +1,4 @@
-
-const songs = [
+export const songs = [
     {
         id: 0,
         name: 'Blinkmoth (July mix)',
