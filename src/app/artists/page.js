@@ -17,7 +17,7 @@ export default async function Artists () {
     <div>
     {artists.map(artist => (
         <Link href={`/artists/${artists.id}`} key={artist.id}>
-            <Image src={artist.img_url} alt="" height={500} width={500}/>
+            {/* <Image src={artist.img_url} alt="" height={500} width={500}/> */}
         </Link>
     ))}
     </div>
