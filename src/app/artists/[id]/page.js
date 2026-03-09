@@ -1,19 +1,43 @@
-import pg from "pg";
-import Link from "next/link";
+// import { db } from "../../../utils/db";
+import Image from "next/image";
+import ChatBox from "../../components/ChatBox";
+import { db } from "../../.././utils/db";
 
-export default async function Artists ({params}) { 
+export default async function Artist ({params}) { 
+    
     const {id} = await params
-    const db = new pg.Pool({connectionString: process.env.DB_CONN})
+    const result = await db. query( 
+        `SELECT * FROM artists WHERE id = $1`,
+        [id]);
 
-    const result = await db.query(`select * from artists WHERE id =$1`, [id])
-    const artist = result.rows[0]
+    const artist = result.rows[0];
 
-    console.log(artist)
+        if (!artist) {
+        return <p>Artist not found</p>;
+        }
+
+    console.log(result)
 
     return (
-<div>
+<div className="flex flex-row">
     <p>All Artrists</p>
-{artist}
+
+        <div key={artist.id}>
+            <Image 
+                src={artist.img_url}
+                alt=""
+                height={350}
+                width={350}
+            />
+
+            <h1>{artist.name}</h1>
+            <p>{artist.year}</p>
+            <p>{artist.bio}</p>
+            <p>{artist.genre}</p>
+        </div>
+        <div className="w-100 border-4 p-4">
+        <ChatBox artistId={artist.id} />
+        </div>
 </div>
 
     )
