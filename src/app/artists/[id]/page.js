@@ -21,7 +21,7 @@ export default async function Artist ({params}) {
     return (
     <div>
             <h1>{artist.name}</h1>
-<div className="flex flex-row justify-between">
+<div className="flex flex-row justify-evenly">
         <div key={artist.id}>
             <Image 
                 src={artist.img_url}
@@ -36,7 +36,7 @@ export default async function Artist ({params}) {
             <p>{artist.genre}</p>
         </div>
 
-        <div className="w-100 border-4 p-4">
+        <div className="w-100 border-4 p-3">
         <ChatBox artistId={artist.id} />
         </div>
 </div>
