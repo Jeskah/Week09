@@ -1,4 +1,4 @@
-So far react and next.js for me has been very enjoyable to learn and experiment with although at times quite the enigma with errors (which I've found mostly straight forward to dedug with the information out there) and routing but something I found to grasp quite quickly. 
+So far react and next.js for me has been very enjoyable to learn and experiment with although at times quite the enigma with errors (which there are so many!! However mostly straight forward to dedug with the information out there) and routing but something I found to grasp quite quickly. 
 
 I'm still hazy with early modules which I plan to revisit which I think will really help tie together all that the past weeks have given me. 
 
